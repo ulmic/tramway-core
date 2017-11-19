@@ -1,7 +1,7 @@
-require "tramway/core/version"
+require 'tramway/core/version'
+require 'tramway/core/web'
 
 module Tramway
   module Core
-    # Your code goes here...
   end
 end
