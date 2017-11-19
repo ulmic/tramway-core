@@ -4,3 +4,6 @@ module Tramway::Core
     end
   end
 end
+
+class ApplicationController < ActionController::Base
+end
