@@ -3,8 +3,6 @@ PATH
   specs:
     tramway-core (0.1.0)
       rails (~> 5.1.4)
-      reform-rails
-      simple_form
 
 GEM
   remote: https://rubygems.org/
@@ -139,6 +137,9 @@ PLATFORMS
 
 DEPENDENCIES
   pg
+  reform
+  reform-rails
+  simple_form
   tramway-core!
 
 BUNDLED WITH
