@@ -1,5 +1,3 @@
-require 'reform'
-
 module Tramway::Core
   class ApplicationForm < ::Reform::Form
     def submit(params)
