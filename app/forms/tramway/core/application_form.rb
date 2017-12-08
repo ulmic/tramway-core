@@ -4,5 +4,7 @@ module Tramway::Core
       raise 'ApplicationForm::Params should not be nil'.inspect unless params
       save if validate params
     end
+
+    def build_errors; end
   end
 end
