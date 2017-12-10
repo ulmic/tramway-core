@@ -2,3 +2,7 @@ ru:
   helpers:
     links:
       enter: Войти
+      save: Сохранить
+      back: Назад
+    actions:
+      update: Редактировать
