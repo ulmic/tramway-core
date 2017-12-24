@@ -4,5 +4,7 @@ ru:
       enter: Войти
       save: Сохранить
       back: Назад
+      sign_out: Выйти
+      actions: Действия
     actions:
       update: Редактировать

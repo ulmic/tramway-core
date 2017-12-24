@@ -1,4 +1,4 @@
-PATH
+PATHactions: Действия
   remote: .
   specs:
     tramway-core (0.1.0.4)
