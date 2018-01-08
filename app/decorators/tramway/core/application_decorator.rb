@@ -25,9 +25,22 @@ class Tramway::Core::ApplicationDecorator
   end
 
   delegate :id, to: :object
+  delegate :class, to: :object
 
   def model
     object
+  end
+
+  def attributes
+    object.attributes.reduce({}) do |hash, attribute|
+      if attribute[0].to_s.in? object.class.state_machines.keys.map(&:to_s)
+        hash.merge! attribute[0] => object.send("human_#{attribute[0]}_name")
+      elsif attribute[1].class.in? [ ActiveSupport::TimeWithZone, DateTime, Time ]
+        hash.merge! attribute[0] => I18n.l(attribute[1])
+      else
+        hash.merge! attribute[0] => attribute[1]
+      end
+    end
   end
 
   protected
