@@ -8,7 +8,13 @@ module Tramway
       state_machine :state, initial: :active do
         state :active
         state :removed
+
+        event :remove do
+          transition active: :remove
+        end
       end
+
+      scope :active, -> { where state: :active }
 
       # FIXME detect inhertited locales
       class << self
@@ -26,6 +32,5 @@ module Tramway
         I18n.t "activerecord.state_machines.tramway/core/application_record.state.states.#{state}"
       end
     end
-
   end
 end

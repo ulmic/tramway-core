@@ -4,7 +4,7 @@ class Tramway::Core::ApplicationDecorator
   end
 
   def name
-    object.try(:name) || object.title
+    object.try(:name) || object.try(:title) || title
   end
 
   class << self
@@ -48,4 +48,4 @@ class Tramway::Core::ApplicationDecorator
   def object
     @object
   end
-end
+end 

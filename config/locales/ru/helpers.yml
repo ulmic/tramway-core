@@ -7,4 +7,5 @@ ru:
       sign_out: Выйти
       actions: Действия
     actions:
+      create: Создать
       update: Редактировать
