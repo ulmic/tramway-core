@@ -43,6 +43,9 @@ class Tramway::Core::ApplicationDecorator
         hash.merge! attribute[0] => I18n.l(attribute[1])
       elsif value.class.superclass == ApplicationUploader
         hash.merge! attribute[0] => link_to(fa_icon(:download), value.url, class: 'btn btn-success')
+      elsif value.is_a? Enumerize::Value
+        binding.pry
+        hash.merge! attribute[0] => value.text
       else
         hash.merge! attribute[0] => attribute[1]
       end
