@@ -1,5 +1,6 @@
 class Tramway::Core::ApplicationDecorator
   include ActionView::Helpers
+  include ActionView::Context
   include FontAwesome::Rails::IconHelper
 
   def initialize(object)
@@ -42,9 +43,12 @@ class Tramway::Core::ApplicationDecorator
       elsif value.class.in? [ ActiveSupport::TimeWithZone, DateTime, Time ]
         hash.merge! attribute[0] => I18n.l(attribute[1])
       elsif value.class.superclass == ApplicationUploader
-        hash.merge! attribute[0] => link_to(fa_icon(:download), value.url, class: 'btn btn-success')
+        tags = content_tag(:div) do
+          concat image_tag value.small.url if value.url.match(/jpg|JPG|png|PNG$/)
+          concat link_to(fa_icon(:download), value.url, class: 'btn btn-success')
+        end
+        hash.merge! attribute[0] => tags
       elsif value.is_a? Enumerize::Value
-        binding.pry
         hash.merge! attribute[0] => value.text
       else
         hash.merge! attribute[0] => attribute[1]
