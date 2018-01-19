@@ -7,6 +7,8 @@ gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'audited'
 gem 'disposable', github: 'apotonick/disposable'
 gem 'enumerize'
+gem 'mini_magick'
+gem 'rmagick'
 
 group :development do
   gem 'better_errors'

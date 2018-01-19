@@ -91,6 +91,7 @@ GEM
     mail (2.7.0)
       mini_mime (>= 0.1.1)
     method_source (0.9.0)
+    mini_magick (4.8.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
@@ -139,6 +140,7 @@ GEM
       declarative (< 0.1.0)
       declarative-option (< 0.2.0)
       uber (< 0.2.0)
+    rmagick (2.16.0)
     sass (3.5.3)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -179,8 +181,10 @@ DEPENDENCIES
   bootstrap (~> 4.0.0.beta2.1)
   disposable!
   enumerize
+  mini_magick
   pg
   reform-rails
+  rmagick
   sass-rails
   simple_form
   tramway-core!
