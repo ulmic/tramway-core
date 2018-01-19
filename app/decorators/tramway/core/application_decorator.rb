@@ -1,4 +1,7 @@
 class Tramway::Core::ApplicationDecorator
+  include ActionView::Helpers
+  include FontAwesome::Rails::IconHelper
+
   def initialize(object)
     @object = object
   end
@@ -33,10 +36,13 @@ class Tramway::Core::ApplicationDecorator
 
   def attributes
     object.attributes.reduce({}) do |hash, attribute|
+      value = object.send attribute[0]
       if attribute[0].to_s.in? object.class.state_machines.keys.map(&:to_s)
         hash.merge! attribute[0] => object.send("human_#{attribute[0]}_name")
-      elsif attribute[1].class.in? [ ActiveSupport::TimeWithZone, DateTime, Time ]
+      elsif value.class.in? [ ActiveSupport::TimeWithZone, DateTime, Time ]
         hash.merge! attribute[0] => I18n.l(attribute[1])
+      elsif value.class.superclass == ApplicationUploader
+        hash.merge! attribute[0] => link_to(fa_icon(:download), value.url, class: 'btn btn-success')
       else
         hash.merge! attribute[0] => attribute[1]
       end

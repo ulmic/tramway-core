@@ -1,3 +1,5 @@
+require 'carrierwave/orm/activerecord'
+
 module Tramway
   module Core
     class ApplicationRecord < ActiveRecord::Base
