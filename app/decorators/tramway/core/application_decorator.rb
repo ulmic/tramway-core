@@ -30,6 +30,7 @@ class Tramway::Core::ApplicationDecorator
 
   delegate :id, to: :object
   delegate :class, to: :object
+  delegate :human_state_name, to: :object
 
   def model
     object

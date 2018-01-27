@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class PhotoUploader < ApplicationUploader
   include ImageDefaults
 
