@@ -5,6 +5,14 @@ class PhotoUploader < ApplicationUploader
     ActionController::Base.helpers.asset_path("images/default_photo.png")
   end
 
+  def url
+    if File.exist? file.file
+      file.file.match(/\/system\/uploads\/.*/).to_s
+    else
+      "/assets/tramway/core/mona_lisa_from_prado_square.jpg"
+    end
+  end
+
   version :medium do
     process :resize_to_fill => [400, 400]
   end
