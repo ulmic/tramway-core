@@ -1,7 +1,18 @@
+GIT
+  remote: git://github.com/apotonick/disposable.git
+  revision: 62be230db0e877df96c2fa0e5be475d4b44b08b6
+  specs:
+    disposable (0.4.3)
+      declarative (>= 0.0.9, < 1.0.0)
+      declarative-builder (< 0.2.0)
+      declarative-option (< 0.2.0)
+      representable (>= 2.4.0, <= 3.1.0)
+      uber (< 0.2.0)
+
 PATH
   remote: .
   specs:
-    tramway-core (0.1.0)
+    tramway-core (0.1.0.4)
       rails (~> 5.1.4)
 
 GEM
@@ -45,6 +56,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (8.0.0)
+    audited (4.5.0)
+      activerecord (>= 4.0, < 5.2)
     autoprefixer-rails (7.1.6)
       execjs
     better_errors (2.4.0)
@@ -63,12 +76,8 @@ GEM
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
-    disposable (0.4.3)
-      declarative (>= 0.0.9, < 1.0.0)
-      declarative-builder (< 0.2.0)
-      declarative-option (< 0.2.0)
-      representable (>= 2.4.0, <= 3.1.0)
-      uber (< 0.2.0)
+    enumerize (2.1.2)
+      activesupport (>= 3.2)
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -82,10 +91,11 @@ GEM
     mail (2.7.0)
       mini_mime (>= 0.1.1)
     method_source (0.9.0)
+    mini_magick (4.8.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
-    nio4r (2.1.0)
+    nio4r (2.2.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     pg (0.21.0)
@@ -130,6 +140,7 @@ GEM
       declarative (< 0.1.0)
       declarative-option (< 0.2.0)
       uber (< 0.2.0)
+    rmagick (2.16.0)
     sass (3.5.3)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -165,10 +176,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  audited
   better_errors
   bootstrap (~> 4.0.0.beta2.1)
+  disposable!
+  enumerize
+  mini_magick
   pg
   reform-rails
+  rmagick
   sass-rails
   simple_form
   tramway-core!
