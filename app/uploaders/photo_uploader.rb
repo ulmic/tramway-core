@@ -6,7 +6,7 @@ class PhotoUploader < ApplicationUploader
   end
 
   def url
-    if File.exist? file.file
+    if file.present? && File.exist?(file.file)
       file.file.match(/\/system\/uploads\/.*/).to_s
     else
       "/assets/tramway/core/mona_lisa_from_prado_square.jpg"
