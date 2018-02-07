@@ -23,7 +23,7 @@ class PhotoUploader < ApplicationUploader
 
   # FIXME move to tramway-landing uploader
   version :card do
-    process resize_to_fill: [400, 200]
+    process resize_to_fill: [400, 200, 'North']
   end
 
   attr_reader :width, :height
