@@ -21,6 +21,11 @@ class PhotoUploader < ApplicationUploader
     process :resize_to_fill => [100, 100]
   end
 
+  # FIXME move to tramway-landing uploader
+  version :card do
+    process resize_to_fill: [400, 200]
+  end
+
   attr_reader :width, :height
 
   before :cache, :capture_size
