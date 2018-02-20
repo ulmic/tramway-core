@@ -26,6 +26,11 @@ class PhotoUploader < ApplicationUploader
     process resize_to_fill: [400, 400, 'North']
   end
 
+  # FIXME move to tramway-landing uploader
+  version :horizontal do
+    process resize_to_fill: [800, 350, 'Center']
+  end
+
   attr_reader :width, :height
 
   before :cache, :capture_size
