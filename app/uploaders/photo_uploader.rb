@@ -6,7 +6,7 @@ class PhotoUploader < ApplicationUploader
   end
 
   def url
-    if File.exist? file.file
+    if file.present? && File.exist?(file.file)
       file.file.match(/\/system\/uploads\/.*/).to_s
     else
       "/assets/tramway/core/mona_lisa_from_prado_square.jpg"
@@ -19,6 +19,16 @@ class PhotoUploader < ApplicationUploader
 
   version :small do
     process :resize_to_fill => [100, 100]
+  end
+
+  # FIXME move to tramway-landing uploader
+  version :card do
+    process resize_to_fill: [400, 400, 'North']
+  end
+
+  # FIXME move to tramway-landing uploader
+  version :horizontal do
+    process resize_to_fill: [800, 350, 'North']
   end
 
   attr_reader :width, :height
