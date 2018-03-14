@@ -20,7 +20,7 @@ module Tramway
 
       # FIXME detect inhertited locales
       class << self
-        def human_attribute_name(attribute_name)
+        def human_attribute_name(attribute_name, *args)
           excepted_attributes = %w( created_at updated_at state )
           if attribute_name.to_s.in? excepted_attributes
             I18n.t "activerecord.attributes.tramway/core/application_record.#{attribute_name}"
